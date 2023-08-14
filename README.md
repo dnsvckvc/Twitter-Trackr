@@ -2,11 +2,30 @@
 
 ## Project Motivation
 
-`Twitter-Trackr` is a compelling project that aims to provide insights into the tweets that a user likes on Twitter. The motivation behind this project is to create a tool that allows users to keep track of and analyze the tweets they have liked over time. By offering a streamlined way to monitor and categorize these liked tweets, users can gain valuable insights, trends, and personal preferences from their Twitter activity.
+Twitter-Trackr is a Python application designed to track and store liked tweets of specified Twitter accounts. This application utilizes the Twitter API, a SQLite database, and the Streamlit framework to provide an interactive web interface for exploring and analyzing liked tweets.
+
+## Key Features
+
+- Initial load of liked tweets for specified accounts.
+- Daily updates to retrieve new liked tweets and remove older data.
+- Storing liked tweets in a SQLite database.
+- Interactive web interface using Streamlit for exploring liked tweets.
 
 ## Getting started
 
+The project adheres to the PEP 8 style guide and follows common best practices, including:
+
+- Variable and function names are clear.
+- Code is commented appropriately.
+- Secrets are stored as environment variables.
+
 ### Key Dependencies & Platforms
+
+- [`tweepy`](https://www.tweepy.org/): A Python library for accessing the Twitter API, enabling interaction with Twitter data.
+- **[`streamlit`](https://www.streamlit.io/)**: A Python library for building interactive web applications with ease, used to create the web interface for exploring liked tweets.
+- **[`SQLite`](https://www.sqlite.org/index.html)**: A lightweight and self-contained SQL database engine, employed to store and manage liked tweets data locally.
+
+Feel free to explore the official documentation for each of these technologies to learn more about their features and usage.
 
 ### Running Locally
 
