@@ -99,29 +99,33 @@ Before running the application, make sure you have set the `BEARER_TOKEN` enviro
 
 To run the application, follow these steps:
 
-    4.1. Adding Accounts
-        Edit the `accounts.csv` file and add the Twitter accounts you want to track. The CSV should contain a list of account usernames with the format `@username`.
+4.1. Adding Accounts
 
-    4.2. Running the Twitter API Script
-        Open one terminal and navigate to the project directory. Run the `twitter_api.py` script:
+Edit the `accounts.csv` file and add the Twitter accounts you want to track. The CSV should contain a list of account usernames with the format `@username`.
 
-        ```bash
-            python twitter_api.py
-        ```
+4.2. Running the Twitter API Script
 
-        This script initializes the initial data load and daily updates of liked tweets for the specified accounts.
+Open one terminal and navigate to the project directory. Run the `twitter_api.py` script:
 
-    4.3. Running the Streamlit Application
-        Open a second terminal and navigate to the project directory. Run the `streamlit_app.py` script:
+```bash
+    python twitter_api.py
+```
 
-        ```bash
-            streamlit run streamlit_app.py
-        ```
+This script initializes the initial data load and daily updates of liked tweets for the specified accounts.
 
-        This will launch the Streamlit web interface where you can explore the liked tweets for the specified accounts.
+4.3. Running the Streamlit Application
 
-    4.4. Accessing Liked Tweets
-        Use the Streamlit web interface to navigate through the liked tweets data. You can select the page size and page number to view and navigate through the data.
+Open a second terminal and navigate to the project directory. Run the `streamlit_app.py` script:
+
+```bash
+    streamlit run streamlit_app.py
+```
+
+This will launch the Streamlit web interface where you can explore the liked tweets for the specified accounts.
+
+4.4. Accessing Liked Tweets
+
+Use the Streamlit web interface to navigate through the liked tweets data. You can select the page size and page number to view and navigate through the data.
 
 ## Acknowledgements and Considerations
 
