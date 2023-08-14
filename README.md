@@ -55,9 +55,9 @@ To set up the database, ensure that you have the required dependencies installed
 
 #### Launching The App
 
-## 1. Clone this repository to your local machine
+1. Clone this repository to your local machine
 
-## 2. Initialize and activate a virtualenv:
+2. Initialize and activate a virtualenv:
 
 ```bash
     # Creating a virtual environment
@@ -77,13 +77,13 @@ To set up the database, ensure that you have the required dependencies installed
     .\env\Scripts\activate
 ```
 
-## 3. Install the dependencies:
+3. Install the dependencies:
 
 ```bash
     pip install -r requirements.txt
 ```
 
-## 4. Setup environment variables:
+4. Setup environment variables:
 
 ```bash
     # UNIX/macOS
@@ -93,39 +93,39 @@ To set up the database, ensure that you have the required dependencies installed
     set BEARER_TOKEN='<your_bearer_token>'
 ```
 
-## 5. Running the Application
+5. Running the Application
 
 Before running the application, make sure you have set the `BEARER_TOKEN` environment variable as described in the Setup environment section.
 
 To run the application, follow these steps:
 
-### 5.1. Adding Accounts
+5.1. Adding Accounts
 
-Edit the `accounts.csv` file and add the Twitter accounts you want to track. The CSV should contain a list of account usernames with the format `@username`.
+    Edit the `accounts.csv` file and add the Twitter accounts you want to track. The CSV should contain a list of account usernames with the format `@username`.
 
-### 5.2. Running the Twitter API Script
+5.2. Running the Twitter API Script
 
-Open one terminal and navigate to the project directory. Run the `twitter_api.py` script:
+    Open one terminal and navigate to the project directory. Run the `twitter_api.py` script:
 
-```bash
-    python twitter_api.py
-```
+    ```bash
+        python twitter_api.py
+    ```
 
-This script initializes the initial data load and daily updates of liked tweets for the specified accounts.
+    This script initializes the initial data load and daily updates of liked tweets for the specified accounts.
 
-### 5.3. Running the Streamlit Application
+5.3. Running the Streamlit Application
 
-Open a second terminal and navigate to the project directory. Run the `streamlit_app.py` script:
+    Open a second terminal and navigate to the project directory. Run the `streamlit_app.py` script:
 
-```bash
-    streamlit run streamlit_app.py
-```
+    ```bash
+        streamlit run streamlit_app.py
+    ```
 
-This will launch the Streamlit web interface where you can explore the liked tweets for the specified accounts.
+    This will launch the Streamlit web interface where you can explore the liked tweets for the specified accounts.
 
-### 5.4. Accessing Liked Tweets
+5.4. Accessing Liked Tweets
 
-Use the Streamlit web interface to navigate through the liked tweets data. You can select the page size and page number to view and navigate through the data.
+    Use the Streamlit web interface to navigate through the liked tweets data. You can select the page size and page number to view and navigate through the data.
 
 ## Acknowledgements and Considerations
 
