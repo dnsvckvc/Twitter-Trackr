@@ -53,6 +53,16 @@ The database required for this application will be created automatically during 
 
 To set up the database, ensure that you have the required dependencies installed and the environment variables configured as described earlier in the README.
 
+#### Testing
+
+Due to the limitations and constraints of the external Twitter API, automated testing of this project's functionality against the live API has not been implemented. The Twitter API's rate limits and restrictions, such as the limited number of requests per time frame, make it challenging to perform thorough testing without encountering errors or rate limiting issues.
+
+While automated testing is a common practice in software development, the unique constraints imposed by the external API have led to the decision not to include automated tests within the codebase. Instead, manual testing, verification, and validation of the application's functionality have been conducted during development and deployment.
+
+Developers interested in contributing to the project or extending its functionality are encouraged to keep in mind the limitations of the Twitter API and the potential for rate-limiting errors, especially in scenarios involving high request volumes or frequent updates.
+
+Please exercise caution and be mindful of API rate limits if you decide to manually test or explore the functionality of this application.
+
 #### Launching The App
 
 1. Clone this repository to your local machine
@@ -101,31 +111,31 @@ To run the application, follow these steps:
 
 5.1. Adding Accounts
 
-    Edit the `accounts.csv` file and add the Twitter accounts you want to track. The CSV should contain a list of account usernames with the format `@username`.
+Edit the `accounts.csv` file and add the Twitter accounts you want to track. The CSV should contain a list of account usernames with the format `@username`.
 
 5.2. Running the Twitter API Script
 
-    Open one terminal and navigate to the project directory. Run the `twitter_api.py` script:
+Open one terminal and navigate to the project directory. Run the `twitter_api.py` script:
 
-    ```bash
-        python twitter_api.py
-    ```
+```bash
+    python twitter_api.py
+```
 
-    This script initializes the initial data load and daily updates of liked tweets for the specified accounts.
+This script initializes the initial data load and daily updates of liked tweets for the specified accounts.
 
 5.3. Running the Streamlit Application
 
-    Open a second terminal and navigate to the project directory. Run the `streamlit_app.py` script:
+Open a second terminal and navigate to the project directory. Run the `streamlit_app.py` script:
 
-    ```bash
-        streamlit run streamlit_app.py
-    ```
+```bash
+    streamlit run streamlit_app.py
+```
 
-    This will launch the Streamlit web interface where you can explore the liked tweets for the specified accounts.
+This will launch the Streamlit web interface where you can explore the liked tweets for the specified accounts.
 
 5.4. Accessing Liked Tweets
 
-    Use the Streamlit web interface to navigate through the liked tweets data. You can select the page size and page number to view and navigate through the data.
+Use the Streamlit web interface to navigate through the liked tweets data. You can select the page size and page number to view and navigate through the data.
 
 ## Acknowledgements and Considerations
 
