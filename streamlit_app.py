@@ -27,7 +27,7 @@ def show_data():
         with bottom_menu[2]:
             page_size = st.selectbox("Page Size", options=[10, 25, 50], index=0, key=f"page_size_{user_id}")
 
-        total_pages = (get_num_of_rows(cursor, user_id) + page_size - 1) // page_size # TODO CHANGE 11 WITH PROPER VALUE
+        total_pages = (get_num_of_rows(cursor, user_id) + page_size - 1) // page_size
 
         with bottom_menu[1]:
             current_page = st.number_input("Page", min_value=1, max_value=total_pages, step=1, key=f"current_page_{user_id}")
