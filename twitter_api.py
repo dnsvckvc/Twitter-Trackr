@@ -14,6 +14,7 @@ logging.basicConfig(
     filemode='w'
 )
 
+DATABASE_URL = 'database/twitter_database.db'
 BEARER_TOKEN = os.environ['BEARER_TOKEN']
 CSV_FILE_PATH = 'accounts.csv'              # Path to the CSV file containing the account usernames
 DAYS_TO_KEEP = 30                           # The number of days to keep liked tweets data
@@ -39,12 +40,12 @@ def get_user_ids(file_path, client):
 
 
 def get_liked_tweets(client, id, token=None):
-    return client.get_liked_tweets(id, pagination_token=token)
+    return client.get_liked_tweets(id, expansions = "author_id", pagination_token=token, tweet_fields = "author_id")
 
 
 def initial_load(client, account_ids):
     logging.info("Performing initial load...")
-    conn = sqlite3.connect('database/twitter_database.db')
+    conn = sqlite3.connect(DATABASE_URL)
     cursor = conn.cursor()
     create_liked_tweets_table(cursor)
     for id in account_ids: 
@@ -68,7 +69,7 @@ def delete_older_data(cursor, days_to_keep):
 
 def daily_update(client, account_ids, days_to_keep):
     logging.info(f"Performing daily update for {datetime.datetime.now().strftime('%Y-%m-%d')}...")
-    conn = sqlite3.connect('database/twitter_database.db')
+    conn = sqlite3.connect(DATABASE_URL)
     cursor = conn.cursor()
 
     for user_id in account_ids:
@@ -85,7 +86,7 @@ if __name__ == "__main__":
     account_ids = get_user_ids(CSV_FILE_PATH, client)
     
     while True:
-        if not os.path.exists('database/twitter_database.db'):
+        if not os.path.exists(DATABASE_URL):
             initial_load(client, account_ids)
         else:
             daily_update(client, account_ids, DAYS_TO_KEEP)

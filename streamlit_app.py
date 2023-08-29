@@ -12,12 +12,12 @@ st.header("Twitter Trackr")
 
 
 CSV_FILE_PATH = 'accounts.csv'
-
+DATABASE_URL = 'database/twitter_database.db'
 
 def show_data():
     usernames = read_csv_file('accounts.csv')
     user_ids = get_user_ids(CSV_FILE_PATH, tweepy.Client(bearer_token=os.environ['BEARER_TOKEN']))
-    conn = sqlite3.connect('database/twitter_database.db')
+    conn = sqlite3.connect(DATABASE_URL)
     cursor = conn.cursor()
 
     for index, user_id in enumerate(user_ids):
@@ -36,7 +36,7 @@ def show_data():
             st.markdown(f"Page **{current_page}** of **{total_pages}**")
 
         liked_tweets = get_liked_tweets_by_user_id(cursor, user_id, page_size, current_page)
-        df = pd.DataFrame(liked_tweets, columns=["Tweet ID", "Tweet Text", "Liked at"])
+        df = pd.DataFrame(liked_tweets, columns=["Tweet ID", "Tweet Text", "Liked at", "Author ID", "Username"])
 
         df["Liked at"] = pd.to_datetime(df["Liked at"]).dt.strftime('%Y-%m-%d')  # Format the date
 
