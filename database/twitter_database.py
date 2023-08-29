@@ -12,11 +12,11 @@ def create_liked_tweets_table(cursor):
     logging.info("Creating 'liked_tweets' table in database...")
     cursor.execute('''
         CREATE TABLE liked_tweets (
-            user_id INTEGER,
-            tweet_id INTEGER,
+            user_id VARCHAR(255),
+            tweet_id VARCHAR(255),
             text TEXT,
             inserted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            author_id INTEGER,
+            author_id VARCHAR(255),
             username VARCHAR(255),
             PRIMARY KEY (user_id, tweet_id)
         )
